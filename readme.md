@@ -2,7 +2,10 @@
 
 Turf Booking System is a full-stack web application built using the MERN (MongoDB, Express, React, Node.js) stack. This platform allows users to book turf slots and manage their reservations, while admins can manage turfs, bookings, and users through a dedicated dashboard.
 
-![Football](https://plus.unsplash.com/premium_photo-1684888476748-204a96ac0ee3?w=500&auto=format&fit=crop&q=60)
+<p align="center">
+  <img src="https://plus.unsplash.com/premium_photo-1684888476748-204a96ac0ee3?w=500&auto=format&fit=crop&q=60" alt="Football" width="400" height="250"/>
+  <img src="https://www.facebook.com/photo/?fbid=3480470901980546&set=pcb.3480470971980539" alt="Turf" width="400" height="250"/>
+</p>
 
 
 ### User Features
