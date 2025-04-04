@@ -5,7 +5,7 @@ import UserPage_HomeView from './User_HomePage/UserPage_HomeView';
 import SubHeaders from '../Header_Component/SubHeaders';
 import UserProfile from './UserProfile/UserProfile';
 import BookSlotPage from './BookSlot/bookslotpage';
-import { BASE_URL } from '../../Url';
+import { BASE_URL } from '../../url';
 import UserHistoryDtls from './UserHistory/UserHistoryDtls';
 
 class UserPage extends React.Component {

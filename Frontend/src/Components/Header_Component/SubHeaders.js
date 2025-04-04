@@ -1,5 +1,5 @@
 import React from 'react'
-import { BASE_URL } from '../../Url';
+import { BASE_URL } from '../../url';
 
 function SubHeaders(props) {
     let alertboxcontentfunc=(title,body)=>{

@@ -2,7 +2,7 @@ import React from 'react'
 import {useState } from "react";
 import Alert from '../Alert_Component/Alert';
 import { Link } from 'react-router-dom';
-import { BASE_URL } from '../../Url';
+import { BASE_URL } from '../../url';
 
 
 function CredPage(props) {
@@ -156,93 +156,52 @@ function CredPage(props) {
 
     return (
         <>
-            {/* Hidden Navigation Buttons */}
             <Link to="/admin">
-                <button id="adminscreen" className="d-none">Cred</button>
+                <button type="button" id="adminscreen" className="btn btn-info btn-lg" style={{ display: "none" }}>Cred</button>
             </Link>
             <Link to="/user">
-                <button id="userscreen" className="d-none">Cred</button>
+                <button type="button" id="userscreen" className="btn btn-info btn-lg" style={{ display: "none" }}>Cred</button>
             </Link>
-            <button
-                id="clickbutton"
-                className="d-none"
-                data-toggle="modal"
-                data-target="#myModal"
-            >
-                Cred
-            </button>
-
-            {/* Bootstrap Modal */}
+            <button type="button" id="clickbutton" className="btn btn-info btn-lg" style={{ display: "none" }} data-toggle="modal" data-target="#myModal">Cred</button>
             <div id="myModal" className="modal fade" role="dialog">
-                <div className="modal-dialog modal-dialog-centered">
-                    <div className="modal-content shadow-lg rounded-3">
-                        
-                        {/* Modal Header */}
-                        <div className="modal-header bg-info text-white">
-                            <h4 className="modal-title w-100 text-center fw-bold">{props.cred.type}</h4>
-                            <button type="button" className="btn-close" data-dismiss="modal"></button>
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h4 className="modal-title text-center">{props.cred.type}</h4>
                         </div>
-
-                        {/* Modal Body */}
-                        <div className="modal-body text-center p-4">
-                            {alertshow && <Alert alertmsg={alertmsg} type={type} />}
-
-                            {/* Register & Login Buttons */}
-                            <div className="d-flex justify-content-center gap-3 mb-4">
-                                <button
-                                    className="btn btn-outline-primary fw-bold px-4"
-                                    onClick={() => reglogchange("Register")}
-                                >
-                                    Register
-                                </button>
-                                <button
-                                    className="btn btn-outline-success fw-bold px-4"
-                                    onClick={() => reglogchange("Login")}
-                                >
-                                    Login
-                                </button>
+                        <div className="modal-body text-center">
+                            {alertshow===true && <Alert alertmsg={alertmsg} type={type}/>}
+                            <div>   
+                                <button type="button" className="btn" onClick={event => reglogchange('Register')}>Register</button> &nbsp;
+                                <button type="button" className="btn" onClick={event => reglogchange('Login')}>Login</button>
                             </div>
-
-                            {/* User ID Field */}
-                            <div className="mb-3">
-                                <label className="fw-semibold">User ID</label>
-                                <input
-                                    type="text"
-                                    className="form-control shadow-sm"
-                                    value={props.cred.userid}
-                                    onChange={useridchange}
-                                    placeholder="Enter User ID"
-                                />
+                            <br/><br/>
+                            <div>
+                                <div className="form-group row">
+                                    <div className="col-sm-2"></div>
+                                    <label className="col-sm-2 col-form-label">User ID</label>
+                                    <div className="col-sm-5">
+                                        <input type="text" className="form-control" value={props.cred.userid} onChange={useridchange}/>
+                                    </div>
+                                    <div className="col-sm-2"></div>
+                                </div>
+                                <div className="form-group row">
+                                    <div className="col-sm-2"></div>
+                                    <label className="col-sm-2 col-form-label">Password</label>
+                                    <div className="col-sm-5">
+                                        <input type="password" className="form-control" value={props.cred.password} onChange={passwordchange}/>
+                                    </div>
+                                    <div className="col-sm-2"></div>
+                                </div>
                             </div>
-
-                            {/* Password Field */}
-                            <div className="mb-3">
-                                <label className="fw-semibold">Password</label>
-                                <input
-                                    type="password"
-                                    className="form-control shadow-sm"
-                                    value={props.cred.password}
-                                    onChange={passwordchange}
-                                    placeholder="Enter Password"
-                                />
-                            </div>
-
-                            {/* Register & Login Action Buttons */}
-                            {props.cred.logintype === "Register" && (
-                                <button className="btn btn-primary w-100 fw-bold" onClick={register}>
-                                    Register
-                                </button>
-                            )}
-                            {props.cred.logintype === "Login" && (
-                                <button className="btn btn-success w-100 fw-bold" onClick={login}>
-                                    Login
-                                </button>
-                            )}
-                        </div>
+                            <br/>
+                            {(props.cred.logintype==="Register") && <button type="button" className="btn" onClick={register}>Register</button>} 
+                            {(props.cred.logintype==="Login") && <button type="button" className="btn" onClick={login}>Login</button>} 
+                        </div> 
                     </div>
                 </div>
-            </div>
+            </div> 
         </>
-    );
+        );       
 }
 export default CredPage;

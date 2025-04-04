@@ -14,7 +14,7 @@ function Header1(props) {
   return (
     <nav
       style={{
-        backgroundColor: "rgba(38, 141, 28, 0.85)",
+        backgroundColor: "#69BB4C",
         padding: "4px",
         boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
         position: "sticky",

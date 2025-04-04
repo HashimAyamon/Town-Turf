@@ -1,5 +1,5 @@
 import React from 'react'
-import { BASE_URL } from '../../../Url';
+import { BASE_URL } from '../../../url';
 
 class UserProfileBottom1 extends React.Component {
     constructor(props) {
