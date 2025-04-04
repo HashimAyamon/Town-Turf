@@ -4,50 +4,48 @@ import ViewAlias from "../Signup_Component/ViewAlias";
 import Description1 from "./Description1";
 import CredPage from "../Signup_Component/CredPage";
 
-function HomePage(props) {
+function HomePage({ cred, setcred, setcontents, setview }) {
     const [admindtls] = useState({
         title: "Admin",
-        desc: "Manage turf at admin level",
+        desc: "Only for Admin",
         button: "Manage",
     });
 
     const [userdtls] = useState({
         title: "User",
-        desc: "Manage turf at user level",
+        desc: "Start With Town Turf",
         button: "Book",
     });
 
     return (
-        <>
-            <div className="bg-gray-100 min-h-screen">
-                {/* Header */}
-                <Header1 cred={props.cred} />
+        <div className="bg-gray-100 min-h-screen">
+            {/* Header */}
+            <Header1 cred={cred} />
 
-                {/* Description Section */}
-                <div className="flex flex-col items-center justify-center py-10">
-                    <Description1 />
-                </div>
+            {/* Description Section */}
+            <section className="flex flex-col items-center justify-center py-10">
+                <Description1 />
+            </section>
 
-                {/* Admin & User Sections */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 md:px-20">
-                    <ViewAlias dtls={admindtls} setcred={props.setcred} />
-                    <ViewAlias dtls={userdtls} setcred={props.setcred} />
-                </div>
+            {/* Admin & User Sections */}
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 md:px-20 ">
+                <ViewAlias dtls={admindtls} setcred={setcred} />
+                <ViewAlias dtls={userdtls} setcred={setcred} />
+            </section>
 
-                {/* Credential Page */}
-                <div className="flex justify-center py-8">
-                    <CredPage
-                        cred={props.cred}
-                        setcred={props.setcred}
-                        setcontents={props.setcontents}
-                        setview={props.setview}
-                    />
-                </div>
+            {/* Credential Page */}
+            <section className="flex justify-center py-8">
+                <CredPage
+                    cred={cred}
+                    setcred={setcred}
+                    setcontents={setcontents}
+                    setview={setview}
+                />
+            </section>
 
-                {/* Spacing for Footer */}
-                <div className="h-10"></div>
-            </div>
-        </>
+            {/* Footer Spacer */}
+            <div className="h-20" />
+        </div>
     );
 }
 

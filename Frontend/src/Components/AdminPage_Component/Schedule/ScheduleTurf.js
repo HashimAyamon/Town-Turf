@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BASE_URL } from "../../../Url";
+import { BASE_URL } from "../../../url";
 
 function ScheduleTurf(props) {
   const [availstyle] = useState({
