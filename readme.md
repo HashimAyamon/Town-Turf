@@ -6,7 +6,6 @@ Turf Booking System is a full-stack web application built using the MERN (MongoD
   <img src="https://plus.unsplash.com/premium_photo-1684888476748-204a96ac0ee3?w=500&auto=format&fit=crop&q=60" alt="Football" width="400" height="250"/>
 </p>
 
-
 ### User Features
 
 - User authentication (Register/Login)
