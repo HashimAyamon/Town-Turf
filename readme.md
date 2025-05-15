@@ -11,7 +11,7 @@ Turf Booking System is a full-stack web application built using the MERN (MongoD
 - User authentication (Register/Login)
 - Browse available turfs
 - Select date and time slots for booking
-- View booking history
+- View booking history  
 - Etc
 
 ### Admin Features
