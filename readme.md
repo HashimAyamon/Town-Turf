@@ -47,7 +47,6 @@ Ensure you have the following installed:
 - MongoDB (local or cloud)
 
 ### Setup
-
 1. Clone the repository:
 
    ```sh
